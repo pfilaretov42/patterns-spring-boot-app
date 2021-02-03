@@ -1,13 +1,13 @@
-package pro.filaretov.blackdots.simpleblackdotsboots;
+package pro.filaretov.spring.patterns.blackdots;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SimpleBlackdotsBootsApplication {
+public class SimpleBlackDotsBootsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SimpleBlackdotsBootsApplication.class, args);
+		SpringApplication.run(SimpleBlackDotsBootsApplication.class, args);
 	}
 
 }

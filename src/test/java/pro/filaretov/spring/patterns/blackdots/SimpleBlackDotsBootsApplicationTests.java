@@ -1,10 +1,10 @@
-package pro.filaretov.blackdots.simpleblackdotsboots;
+package pro.filaretov.spring.patterns.blackdots;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SimpleBlackdotsBootsApplicationTests {
+class SimpleBlackDotsBootsApplicationTests {
 
 	@Test
 	void contextLoads() {
