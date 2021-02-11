@@ -1,4 +1,4 @@
-package pro.filaretov.spring.patterns.blackdots;
+package pro.filaretov.spring.patterns.blackdots.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
