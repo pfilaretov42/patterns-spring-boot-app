@@ -5,6 +5,9 @@ package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
  */
 public interface MusicInstrumentExpert {
 
+    String WOODY = "woody";
+    String METAL = "metal";
+
     /**
      * Adjust music instrument.
      */
