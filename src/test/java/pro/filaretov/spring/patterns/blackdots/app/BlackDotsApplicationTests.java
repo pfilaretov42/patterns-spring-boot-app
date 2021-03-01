@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import pro.filaretov.spring.patterns.blackdots.app.service.PianoExpert;
-import pro.filaretov.spring.patterns.blackdots.app.service.TriangleExpert;
+import pro.filaretov.spring.patterns.blackdots.app.service.instrument.PianoExpert;
+import pro.filaretov.spring.patterns.blackdots.app.service.instrument.TriangleExpert;
 
 /**
  * {@link TestEnvConfig} has {@code lazyInit = true} applied to {@code @ComponentScan}, so

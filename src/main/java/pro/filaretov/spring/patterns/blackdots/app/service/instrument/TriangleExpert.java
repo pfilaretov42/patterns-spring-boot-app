@@ -1,4 +1,4 @@
-package pro.filaretov.spring.patterns.blackdots.app.service;
+package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -11,13 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Lazy
 @Slf4j
-public class TriangleExpert {
+public class TriangleExpert implements MusicInstrumentExpert {
 
     @PostConstruct
     public void postConstruct() {
-        log.info("Triangle expert is here");
+        log.info("TRIANGLE expert is here");
     }
 
+    @Override
     public void adjust() {
         log.info("triangle adjusted");
     }

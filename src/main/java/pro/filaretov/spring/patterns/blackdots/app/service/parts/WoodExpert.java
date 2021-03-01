@@ -1,4 +1,4 @@
-package pro.filaretov.spring.patterns.blackdots.app.service;
+package pro.filaretov.spring.patterns.blackdots.app.service.parts;
 
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;

@@ -1,37 +1,23 @@
 package pro.filaretov.spring.patterns.blackdots.app.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.scheduling.annotation.Scheduled;
+import javax.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pro.filaretov.spring.patterns.blackdots.app.service.instrument.MusicInstrumentExpert;
 
 /**
- * Instruments repair service.
+ * Instruments repair scheduled service.
  */
 @Service
-// This also works fine instead of implicit constructor.
-//@RequiredArgsConstructor(onConstructor_={@Lazy})
+@Slf4j
 public class InstrumentsService {
 
-    private final PianoExpert pianoExpert;
-    private final TriangleExpert triangleExpert;
+    @Autowired
+    private MusicInstrumentExpert pianoExpert;
 
-    public InstrumentsService(PianoExpert pianoExpert, @Lazy TriangleExpert triangleExpert) {
-        this.pianoExpert = pianoExpert;
-        this.triangleExpert = triangleExpert;
+    @PostConstruct
+    public void postConstruct() {
+        log.info("InstrumentsService created with an expert: {}", pianoExpert.getClass().getSimpleName());
     }
-
-    private int instrumentsAdjusted = 0;
-
-    @Scheduled(fixedRate = 1000)
-    public void adjust() {
-        if (instrumentsAdjusted < 5) {
-            pianoExpert.adjust();
-            instrumentsAdjusted++;
-        } else {
-            triangleExpert.adjust();
-            instrumentsAdjusted = 0;
-        }
-    }
-
 }
