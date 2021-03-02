@@ -8,7 +8,7 @@ import pro.filaretov.spring.patterns.blackdots.app.service.parts.WoodExpert;
 /**
  * Expert in adjusting violins.
  */
-@Expert(value = MusicInstrumentExpert.WOODY)
+@Expert(type = MusicInstrumentExpert.WOODY)
 @Slf4j
 public class ViolinExpert implements MusicInstrumentExpert {
 

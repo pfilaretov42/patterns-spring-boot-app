@@ -12,5 +12,5 @@ import org.springframework.stereotype.Component;
 @Component
 @Qualifier
 public @interface Expert {
-    String value();
+    String type();
 }
