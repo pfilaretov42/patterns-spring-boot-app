@@ -8,7 +8,7 @@ import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
 /**
  * Expert in adjusting triangles. Triangles are rare, so it is VERY expensive, and we want it to be lazy instantiated.
  */
-@Expert(MusicInstrumentExpert.METAL)
+@Expert(value = MusicInstrumentExpert.METAL)
 @Lazy
 @Slf4j
 public class TriangleExpert implements MusicInstrumentExpert {
