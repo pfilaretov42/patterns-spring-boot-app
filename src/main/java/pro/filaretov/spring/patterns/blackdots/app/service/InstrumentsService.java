@@ -2,9 +2,8 @@ package pro.filaretov.spring.patterns.blackdots.app.service;
 
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.MusicInstrumentExpert;
 
 /**
@@ -14,8 +13,7 @@ import pro.filaretov.spring.patterns.blackdots.app.service.instrument.MusicInstr
 @Slf4j
 public class InstrumentsService {
 
-    @Autowired
-    @Qualifier("violinExpert")
+    @Expert(type = MusicInstrumentExpert.METAL)
     private MusicInstrumentExpert musicInstrumentExpert;
 
     @PostConstruct
