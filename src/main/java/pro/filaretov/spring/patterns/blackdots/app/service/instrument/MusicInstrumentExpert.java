@@ -1,5 +1,7 @@
 package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 
+import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
+
 /**
  * Music instrument expert.
  */
@@ -10,6 +12,7 @@ public interface MusicInstrumentExpert {
 
     /**
      * Adjust music instrument.
+     * @param musicInstrument music instrument
      */
-    void adjust();
+    void adjust(MusicInstrument musicInstrument);
 }

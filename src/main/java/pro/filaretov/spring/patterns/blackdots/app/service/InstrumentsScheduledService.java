@@ -1,8 +1,8 @@
 package pro.filaretov.spring.patterns.blackdots.app.service;
 
 import org.springframework.context.annotation.Lazy;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.PianoExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.TriangleExpert;
 
@@ -28,10 +28,10 @@ public class InstrumentsScheduledService {
     //@Scheduled(fixedRate = 1000)
     public void adjust() {
         if (instrumentsAdjusted < 5) {
-            pianoExpert.adjust();
+            pianoExpert.adjust(new MusicInstrument(MusicInstrument.PIANO));
             instrumentsAdjusted++;
         } else {
-            triangleExpert.adjust();
+            triangleExpert.adjust(new MusicInstrument(MusicInstrument.TRIANGLE));
             instrumentsAdjusted = 0;
         }
     }

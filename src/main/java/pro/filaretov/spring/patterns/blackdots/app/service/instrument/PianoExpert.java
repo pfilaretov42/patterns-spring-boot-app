@@ -4,7 +4,8 @@ import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
-import pro.filaretov.spring.patterns.blackdots.app.service.parts.StringExpert;
+import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
+import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.StringExpert;
 
 /**
  * Expert in adjusting pianos.
@@ -22,7 +23,11 @@ public class PianoExpert implements MusicInstrumentExpert {
     }
 
     @Override
-    public void adjust() {
-        log.info("piano adjusted");
+    public void adjust(MusicInstrument musicInstrument) {
+        if (MusicInstrument.PIANO.equals(musicInstrument.getType())) {
+            log.info("{} adjusted", musicInstrument.getType());
+        } else {
+            log.warn("Piano expert ignores everything but {}, especially {}", MusicInstrument.PIANO, musicInstrument);
+        }
     }
 }
