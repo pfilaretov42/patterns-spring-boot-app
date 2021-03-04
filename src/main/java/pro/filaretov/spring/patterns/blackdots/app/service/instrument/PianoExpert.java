@@ -6,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.StringExpert;
+import pro.filaretov.spring.patterns.blackdots.legacy.Instrument;
+import pro.filaretov.spring.patterns.blackdots.legacy.InstrumentExpert;
 
 /**
  * Expert in adjusting pianos.
  */
 @Expert(type = MusicInstrumentExpert.WOODY)
 @Slf4j
-public class PianoExpert implements MusicInstrumentExpert {
+public class PianoExpert implements MusicInstrumentExpert, InstrumentExpert {
 
     @Autowired
     private StringExpert stringExpert;
@@ -24,10 +26,19 @@ public class PianoExpert implements MusicInstrumentExpert {
 
     @Override
     public void adjust(MusicInstrument musicInstrument) {
-        if (MusicInstrument.PIANO.equals(musicInstrument.getType())) {
-            log.info("{} adjusted", musicInstrument.getType());
+        adjust(musicInstrument.getType());
+    }
+
+    @Override
+    public void adjust(Instrument instrument) {
+        adjust(instrument.getType());
+    }
+
+    private void adjust(String type) {
+        if (MusicInstrument.PIANO.equals(type)) {
+            log.info("{} adjusted", type);
         } else {
-            log.warn("Piano expert ignores everything but {}, especially {}", MusicInstrument.PIANO, musicInstrument);
+            log.warn("Piano expert ignores everything but {}, especially {}", MusicInstrument.PIANO, type);
         }
     }
 }
