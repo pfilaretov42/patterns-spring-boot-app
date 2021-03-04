@@ -1,6 +1,7 @@
 package pro.filaretov.spring.patterns.blackdots.app.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -26,13 +27,7 @@ public class InstrumentsService {
     private List<MusicInstrumentExpert> experts;
 
     @Autowired
-    private PianoExpert pianoExpert;
-    @Autowired
-    private ViolinExpert violinExpert;
-    @Autowired
-    private TriangleExpert triangleExpert;
-    @Autowired
-    private WhateverExpert whateverExpert;
+    private Map<String, MusicInstrumentExpert> expertMap;
 
     @PostConstruct
     public void postConstruct() {
@@ -52,17 +47,13 @@ public class InstrumentsService {
 
     /**
      * Repair music instrument using one of the experts depending on the instrument type.
-     * <p><b>Anti-pattern:</b> switch.
+     * <p><b>Pattern:</b> strategy & command. Uses bean IDs which is easy but not really great.
      *
      * @param musicInstrument music instrument
      */
     public void repair(MusicInstrument musicInstrument) {
-        switch (musicInstrument.getType()) {
-            case MusicInstrument.PIANO -> pianoExpert.repair(musicInstrument);
-            case MusicInstrument.VIOLIN -> violinExpert.repair(musicInstrument);
-            case MusicInstrument.TRIANGLE -> triangleExpert.repair(musicInstrument);
-            default -> whateverExpert.repair(musicInstrument);
-        }
+        MusicInstrumentExpert expert = expertMap.getOrDefault(musicInstrument.getType(), new WhateverExpert());
+        expert.repair(musicInstrument);
     }
 
 }

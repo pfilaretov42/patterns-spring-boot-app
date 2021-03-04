@@ -2,14 +2,14 @@ package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
+import org.springframework.stereotype.Component;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.WoodExpert;
 
 /**
  * Expert in adjusting violins.
  */
-@Expert(type = MusicInstrumentExpert.WOODY)
+@Component(MusicInstrument.VIOLIN)
 @Slf4j
 public class ViolinExpert implements MusicInstrumentExpert {
 
