@@ -12,7 +12,16 @@ public interface MusicInstrumentExpert {
 
     /**
      * Adjust music instrument.
+     *
      * @param musicInstrument music instrument
      */
     void adjust(MusicInstrument musicInstrument);
+
+    /**
+     * Repair music instrument.
+     *
+     * @param musicInstrument music instrument
+     */
+    void repair(MusicInstrument musicInstrument);
+
 }

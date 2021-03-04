@@ -23,4 +23,9 @@ public class WoodExpert implements MusicInstrumentExpert {
     public void adjust(MusicInstrument musicInstrument) {
         log.info("{}'s wood adjusted", musicInstrument.getType());
     }
+
+    @Override
+    public void repair(MusicInstrument musicInstrument) {
+        log.info("{}'s wood repaired", musicInstrument.getType());
+    }
 }

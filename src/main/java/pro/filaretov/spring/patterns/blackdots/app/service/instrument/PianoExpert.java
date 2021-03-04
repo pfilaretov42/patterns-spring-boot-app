@@ -41,4 +41,9 @@ public class PianoExpert implements MusicInstrumentExpert, InstrumentExpert {
             log.warn("Piano expert ignores everything but {}, especially {}", MusicInstrument.PIANO, type);
         }
     }
+
+    @Override
+    public void repair(MusicInstrument musicInstrument) {
+        log.info("{} repaired", musicInstrument.getType());
+    }
 }

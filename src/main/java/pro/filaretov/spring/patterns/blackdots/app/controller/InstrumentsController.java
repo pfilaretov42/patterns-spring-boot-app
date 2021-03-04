@@ -25,12 +25,18 @@ public class InstrumentsController {
 
     @PostMapping("/adjust")
     public void adjust(@RequestBody MusicInstrument musicInstrument) {
-        instrumentsService.adjustInstrument(musicInstrument);
+        instrumentsService.adjust(musicInstrument);
     }
 
     @PostMapping("/adjust/legacy")
     public void adjust(@RequestBody Instrument instrument) {
         legacyInstrumentsService.adjustInstrument(instrument);
     }
+
+    @PostMapping("/repair")
+    public void repair(@RequestBody MusicInstrument musicInstrument) {
+        instrumentsService.repair(musicInstrument);
+    }
+
 
 }

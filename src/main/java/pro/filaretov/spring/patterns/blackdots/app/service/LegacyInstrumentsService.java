@@ -18,7 +18,8 @@ import pro.filaretov.spring.patterns.blackdots.starter.autoconfigure.Legacy;
 public class LegacyInstrumentsService {
 
     // only @Legacy-marked experts will be injected here, so even though PianoExpert is InstrumentExpert,
-    // it will not be injected
+    // it will not be injected.
+    // Pattern: integrate legacy framework/code as spring beans.
     @Autowired
     @Legacy
     private List<InstrumentExpert> experts;

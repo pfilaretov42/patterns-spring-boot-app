@@ -28,4 +28,9 @@ public class TriangleExpert implements MusicInstrumentExpert {
                 musicInstrument);
         }
     }
+
+    @Override
+    public void repair(MusicInstrument musicInstrument) {
+        log.info("{} repaired", musicInstrument.getType());
+    }
 }

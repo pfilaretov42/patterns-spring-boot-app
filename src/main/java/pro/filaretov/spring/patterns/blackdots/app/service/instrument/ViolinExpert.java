@@ -28,4 +28,9 @@ public class ViolinExpert implements MusicInstrumentExpert {
             log.warn("Violin expert ignores everything but {}, especially {}", MusicInstrument.VIOLIN, musicInstrument);
         }
     }
+
+    @Override
+    public void repair(MusicInstrument musicInstrument) {
+        log.info("{} repaired", musicInstrument.getType());
+    }
 }
