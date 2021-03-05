@@ -28,4 +28,9 @@ public class StringExpert implements MusicInstrumentExpert {
     public void repair(MusicInstrument musicInstrument) {
         log.info("{}'s strings repaired", musicInstrument.getType());
     }
+
+    @Override
+    public String getType() {
+        return "strings";
+    }
 }

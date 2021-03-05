@@ -28,4 +28,9 @@ public class WoodExpert implements MusicInstrumentExpert {
     public void repair(MusicInstrument musicInstrument) {
         log.info("{}'s wood repaired", musicInstrument.getType());
     }
+
+    @Override
+    public String getType() {
+        return "woods";
+    }
 }

@@ -24,4 +24,8 @@ public interface MusicInstrumentExpert {
      */
     void repair(MusicInstrument musicInstrument);
 
+    /**
+     * The type of the expert, e.g. violin, piano, etc
+     */
+    String getType();
 }

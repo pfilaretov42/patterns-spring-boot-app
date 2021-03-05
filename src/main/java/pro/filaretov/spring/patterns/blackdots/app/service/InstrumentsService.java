@@ -1,17 +1,17 @@
 package pro.filaretov.spring.patterns.blackdots.app.service;
 
+import static java.util.stream.Collectors.toMap;
+
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.MusicInstrumentExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.PianoExpert;
-import pro.filaretov.spring.patterns.blackdots.app.service.instrument.TriangleExpert;
-import pro.filaretov.spring.patterns.blackdots.app.service.instrument.ViolinExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.WhateverExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.WoodExpert;
 import pro.filaretov.spring.patterns.blackdots.starter.autoconfigure.InjectList;
@@ -26,8 +26,11 @@ public class InstrumentsService {
     @InjectList({PianoExpert.class, WoodExpert.class})
     private List<MusicInstrumentExpert> experts;
 
-    @Autowired
-    private Map<String, MusicInstrumentExpert> expertMap;
+    private final Map<String, MusicInstrumentExpert> expertMap;
+
+    public InstrumentsService(List<MusicInstrumentExpert> experts) {
+        expertMap = experts.stream().collect(toMap(MusicInstrumentExpert::getType, Function.identity()));
+    }
 
     @PostConstruct
     public void postConstruct() {

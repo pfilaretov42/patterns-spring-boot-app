@@ -33,4 +33,9 @@ public class TriangleExpert implements MusicInstrumentExpert {
     public void repair(MusicInstrument musicInstrument) {
         log.info("{} repaired", musicInstrument.getType());
     }
+
+    @Override
+    public String getType() {
+        return MusicInstrument.TRIANGLE;
+    }
 }

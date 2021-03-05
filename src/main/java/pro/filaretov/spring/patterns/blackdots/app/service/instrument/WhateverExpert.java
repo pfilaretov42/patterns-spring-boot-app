@@ -20,4 +20,9 @@ public class WhateverExpert implements MusicInstrumentExpert {
     public void repair(MusicInstrument musicInstrument) {
         log.info("{} is fine as is, nothing to repair", musicInstrument.getType());
     }
+
+    @Override
+    public String getType() {
+        return "any";
+    }
 }
