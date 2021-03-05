@@ -1,10 +1,8 @@
 package pro.filaretov.spring.patterns.blackdots.app.service;
 
-import static java.util.stream.Collectors.toMap;
-
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +14,6 @@ import pro.filaretov.spring.patterns.blackdots.app.service.instrument.WhateverEx
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.WoodExpert;
 import pro.filaretov.spring.patterns.blackdots.starter.autoconfigure.InjectList;
 
-
 @Service
 @Slf4j
 public class InstrumentsServiceImpl implements InstrumentsService {
@@ -24,16 +21,17 @@ public class InstrumentsServiceImpl implements InstrumentsService {
     @InjectList({PianoExpert.class, WoodExpert.class})
     private List<MusicInstrumentExpert> experts;
 
-    private final Map<String, MusicInstrumentExpert> expertMap;
-
-    public InstrumentsServiceImpl(List<MusicInstrumentExpert> experts) {
-        expertMap = experts.stream().collect(toMap(MusicInstrumentExpert::getType, Function.identity()));
-    }
+    private final Map<String, MusicInstrumentExpert> expertMap = new ConcurrentHashMap<>();
 
     @PostConstruct
     public void postConstruct() {
         log.info("InstrumentsService created with experts: {}",
             experts.stream().map(e -> e.getClass().getSimpleName()).collect(Collectors.joining(", ")));
+    }
+
+    @Override
+    public void registerExpert(String type, MusicInstrumentExpert expert) {
+        expertMap.put(type, expert);
     }
 
     /**
