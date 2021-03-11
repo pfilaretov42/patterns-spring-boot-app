@@ -38,7 +38,7 @@ public class PianoExpert implements MusicInstrumentExpert, InstrumentExpert {
         if (MusicInstrument.PIANO.equals(type)) {
             log.info("{} adjusted", type);
         } else {
-            log.warn("Piano expert ignores everything but {}, especially {}", MusicInstrument.PIANO, type);
+            throw new ClassCastException(type + " cannot be casted to piano");
         }
     }
 
