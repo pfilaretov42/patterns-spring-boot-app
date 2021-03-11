@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.dto.InstrumentsDTO;
 import pro.filaretov.spring.patterns.blackdots.app.service.InstrumentsService;
 import pro.filaretov.spring.patterns.blackdots.app.service.LegacyInstrumentsService;
 import pro.filaretov.spring.patterns.blackdots.legacy.Instrument;
+import pro.filaretov.spring.patterns.blackdots.starter.wrapper.DealerController;
 
 /**
  * Instruments' endpoints.
  */
-@RestController
+@DealerController
 @RequestMapping("/api/v1/instruments")
 public class InstrumentsController {
 
