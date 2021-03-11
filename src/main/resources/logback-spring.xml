@@ -14,9 +14,9 @@
   </springProfile>
 
   <springProfile name="default">
-    <logger name="org.springframework.beans" level="DEBUG" additivity="false">
-      <appender-ref ref="CONSOLE"/>
-    </logger>
+<!--    <logger name="org.springframework.beans" level="DEBUG" additivity="false">-->
+<!--      <appender-ref ref="CONSOLE"/>-->
+<!--    </logger>-->
     <root level="INFO">
       <appender-ref ref="CONSOLE"/>
     </root>
