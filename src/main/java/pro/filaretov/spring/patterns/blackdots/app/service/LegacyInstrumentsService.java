@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.filaretov.spring.patterns.blackdots.legacy.Instrument;
 import pro.filaretov.spring.patterns.blackdots.legacy.InstrumentExpert;
-import pro.filaretov.spring.patterns.blackdots.starter.autoconfigure.Legacy;
+import pro.filaretov.spring.patterns.blackdots.starter.annotation.Legacy;
 
 /**
  * Legacy instruments repair service.

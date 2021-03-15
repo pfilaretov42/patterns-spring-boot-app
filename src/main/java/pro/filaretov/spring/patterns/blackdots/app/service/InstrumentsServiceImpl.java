@@ -12,7 +12,7 @@ import pro.filaretov.spring.patterns.blackdots.app.service.instrument.MusicInstr
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.PianoExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.WhateverExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.WoodExpert;
-import pro.filaretov.spring.patterns.blackdots.starter.autoconfigure.InjectList;
+import pro.filaretov.spring.patterns.blackdots.starter.annotation.InjectList;
 
 @Service
 @Slf4j

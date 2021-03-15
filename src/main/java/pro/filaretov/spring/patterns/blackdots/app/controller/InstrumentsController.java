@@ -12,7 +12,7 @@ import pro.filaretov.spring.patterns.blackdots.app.dto.InstrumentsDTO;
 import pro.filaretov.spring.patterns.blackdots.app.service.InstrumentsService;
 import pro.filaretov.spring.patterns.blackdots.app.service.LegacyInstrumentsService;
 import pro.filaretov.spring.patterns.blackdots.legacy.Instrument;
-import pro.filaretov.spring.patterns.blackdots.starter.wrapper.DealerController;
+import pro.filaretov.spring.patterns.blackdots.starter.annotation.DealerController;
 
 /**
  * Instruments' endpoints.
