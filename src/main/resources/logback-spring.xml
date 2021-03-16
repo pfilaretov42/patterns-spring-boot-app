@@ -13,7 +13,7 @@
     <logger name="org.apache.http" level="INFO"/>
   </springProfile>
 
-  <springProfile name="default">
+  <springProfile name="default | traditional | digital">
 <!--    <logger name="org.springframework.beans" level="DEBUG" additivity="false">-->
 <!--      <appender-ref ref="CONSOLE"/>-->
 <!--    </logger>-->

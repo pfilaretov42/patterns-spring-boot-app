@@ -6,17 +6,23 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.MusicInstrumentExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.PianoExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.WhateverExpert;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.WoodExpert;
+import pro.filaretov.spring.patterns.blackdots.app.util.ProfileConst;
 import pro.filaretov.spring.patterns.blackdots.starter.annotation.InjectList;
 
+/**
+ * Service to repair traditional instruments
+ */
+@Profile(ProfileConst.TRADITIONAL)
 @Service
 @Slf4j
-public class InstrumentsServiceImpl implements InstrumentsService {
+public class TraditionalInstrumentsService implements InstrumentsService {
 
     @InjectList({PianoExpert.class, WoodExpert.class})
     private List<MusicInstrumentExpert> experts;
@@ -24,8 +30,8 @@ public class InstrumentsServiceImpl implements InstrumentsService {
     private final Map<String, MusicInstrumentExpert> expertMap = new ConcurrentHashMap<>();
 
     @PostConstruct
-    public void postConstruct() {
-        log.info("InstrumentsService created with experts: {}",
+    public void init() {
+        log.info("TraditionalInstrumentsService created with experts: {}",
             experts.stream().map(e -> e.getClass().getSimpleName()).collect(Collectors.joining(", ")));
     }
 
