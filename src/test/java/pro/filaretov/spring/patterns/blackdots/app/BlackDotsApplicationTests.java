@@ -10,9 +10,9 @@ import pro.filaretov.spring.patterns.blackdots.app.service.instrument.PianoExper
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.TriangleExpert;
 
 /**
- * {@link TestEnvConfig} has {@code lazyInit = true} applied to {@code @ComponentScan}, so
- * only beans that are required for this test (with their dependencies) will be created, i.e.
- * {@code pianoExpert} and {@code triangleExpert} will be created and {@code violinExpert} will not be created.
+ * {@link TestEnvConfig} has {@code lazyInit = true} applied to {@code @ComponentScan}, so only beans that are required
+ * for this test (with their dependencies) will be created, i.e. {@code pianoExpert} and {@code triangleExpert} will be
+ * created and {@code violinExpert} will not be created.
  */
 @SpringBootTest(classes = TestEnvConfig.class)
 class BlackDotsApplicationTests {
