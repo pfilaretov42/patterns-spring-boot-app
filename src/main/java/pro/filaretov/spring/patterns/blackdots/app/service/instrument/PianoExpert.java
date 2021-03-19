@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
-import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.StringExpert;
+import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.WoodExpert;
 import pro.filaretov.spring.patterns.blackdots.legacy.Instrument;
 import pro.filaretov.spring.patterns.blackdots.legacy.InstrumentExpert;
 
@@ -17,7 +17,7 @@ import pro.filaretov.spring.patterns.blackdots.legacy.InstrumentExpert;
 public class PianoExpert implements MusicInstrumentExpert, InstrumentExpert {
 
     @Autowired
-    private StringExpert stringExpert;
+    private WoodExpert woodExpert;
 
     @PostConstruct
     public void postConstruct() {
