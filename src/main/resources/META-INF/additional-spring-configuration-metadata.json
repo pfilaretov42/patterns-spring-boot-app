@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "black.dots.expert.string.strings.type",
+      "type": "java.lang.String",
+      "description": "Type of strings."
+    }
+  ]
+}

@@ -3,6 +3,7 @@ package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import pro.filaretov.spring.patterns.blackdots.app.domain.Expert;
 import pro.filaretov.spring.patterns.blackdots.app.domain.MusicInstrument;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.StringExpert;
@@ -20,9 +21,12 @@ public class ViolinExpert implements MusicInstrumentExpert {
     @Autowired
     private WoodExpert woodExpert;
 
+    @Value("${black.dots.expert.string.strings.type}")
+    private String stringsType;
+
     @PostConstruct
     public void postConstruct() {
-        log.info("Violin expert is here");
+        log.info("Violin expert is here, I'm using {} strings today", stringsType);
     }
 
     @Override
@@ -42,5 +46,9 @@ public class ViolinExpert implements MusicInstrumentExpert {
     @Override
     public String getType() {
         return MusicInstrument.VIOLIN;
+    }
+
+    public String getStringsType() {
+        return stringsType;
     }
 }
