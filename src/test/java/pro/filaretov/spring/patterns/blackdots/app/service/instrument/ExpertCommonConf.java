@@ -1,5 +1,6 @@
 package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 
+import javax.annotation.PostConstruct;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,11 @@ public class ExpertCommonConf {
 
     @MockBean
     InstrumentsService instrumentsService;
+
+    @PostConstruct
+    public void init() {
+        System.out.println("ExpertCommonConf INIT");
+    }
 
     @Bean
     public WoodExpert woodExpert() {
