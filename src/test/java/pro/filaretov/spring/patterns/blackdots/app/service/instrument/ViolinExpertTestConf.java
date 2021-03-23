@@ -1,13 +1,13 @@
 package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import pro.filaretov.spring.patterns.blackdots.app.service.instrument.parts.StringExpert;
 
 /**
  * Test configuration for {@link ViolinExpertTest}.
  */
-@Configuration
+@TestConfiguration
 public class ViolinExpertTestConf {
 
     @Bean

@@ -1,12 +1,12 @@
 package pro.filaretov.spring.patterns.blackdots.app.service.instrument;
 
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Test configuration for {@link PianoExpertTest}.
  */
-@Configuration
+@TestConfiguration
 public class PianoExpertTestConfig {
 
     @Bean
